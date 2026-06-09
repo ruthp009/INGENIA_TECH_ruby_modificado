@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #1e3a8a, #06b6d4);
+}
+
+/* NAV */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: #111827;
+}
+
+nav a {
+    padding: 15px 25px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #06b6d4;
+}
+
+/* CONTENIDO */
+.contenido {
+    display: flex;
+    width: 90%;
+    margin: 40px auto;
+    gap: 30px;
+}
+
+/* TARJETAS */
+.tarjetas {
+    width: 70%;
+}
+
+.card {
+    display: block;
+    background-color: #1e293b;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #334155;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 30%;
+}
+
+.sidebar img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111827;
+}

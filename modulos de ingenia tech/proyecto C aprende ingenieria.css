@@ -1,0 +1,113 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#0b0f1a;
+color:white;
+line-height:1.6;
+}
+
+header{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#081321,#10335f);
+}
+
+header h1{
+font-size:3.5rem;
+color:#00d4ff;
+text-shadow:0 0 15px #00d4ff;
+}
+
+header p{
+margin-top:15px;
+font-size:1.1rem;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:#00d4ff;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+.intro,
+.aprendizaje,
+.conclusion{
+padding:60px 20px;
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+.intro h2,
+.aprendizaje h2,
+.conclusion h2{
+color:#00d4ff;
+margin-bottom:20px;
+}
+
+.contenedor{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+padding:50px 20px;
+}
+
+.card{
+width:300px;
+background:#121f36;
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #00d4ff;
+}
+
+.card i{
+font-size:60px;
+color:#00d4ff;
+margin-bottom:20px;
+}
+
+ol{
+max-width:500px;
+margin:auto;
+text-align:left;
+}
+
+ol li{
+margin:12px 0;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#07111f;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:2.3rem;
+}
+
+.card{
+width:90%;
+}
+
+}

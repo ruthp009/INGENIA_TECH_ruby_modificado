@@ -1,0 +1,131 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#081018;
+color:white;
+}
+
+header{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#0b1e2d,#163d63);
+}
+
+header h1{
+font-size:3.5rem;
+color:#4ddfff;
+}
+
+header p{
+margin-top:15px;
+font-size:1.1rem;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:#4ddfff;
+color:black;
+font-weight:bold;
+text-decoration:none;
+border-radius:30px;
+}
+
+.intro{
+text-align:center;
+padding:60px 20px;
+max-width:900px;
+margin:auto;
+}
+
+.intro h2{
+color:#4ddfff;
+margin-bottom:20px;
+}
+
+.catalogo{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.producto{
+background:#102236;
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+border:1px solid rgba(77,223,255,.2);
+}
+
+.producto:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px rgba(77,223,255,.5);
+}
+
+.producto i{
+font-size:60px;
+color:#4ddfff;
+margin-bottom:20px;
+}
+
+.producto h3{
+margin-bottom:15px;
+}
+
+.producto p{
+margin:8px 0;
+}
+
+.producto span{
+display:block;
+margin-top:15px;
+font-weight:bold;
+color:#4ddfff;
+}
+
+.consejos{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+}
+
+.consejos h2{
+text-align:center;
+margin-bottom:25px;
+color:#4ddfff;
+}
+
+.consejos ul{
+padding-left:20px;
+}
+
+.consejos li{
+margin:12px 0;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#06111d;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:2.3rem;
+}
+
+.catalogo{
+padding:20px;
+}
+
+}
