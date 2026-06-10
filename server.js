@@ -16,7 +16,7 @@ const mimeTypes = {
 
 const servidor = http.createServer(async (req, res) => {
   if (req.url === '/' && req.method === 'GET') {
-    const filePath = path.join(__dirname, 'xx.html');
+    const filePath = path.join(__dirname, 'pagina principal ingenia tech','parte central.html');
     res.writeHead(200, {'Content-Type':'text/html'});
     return fs.createReadStream(filePath).pipe(res);
   }
