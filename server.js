@@ -21,8 +21,14 @@ const pool = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "Rubi#Data_01",
-    database: "ingenia_tech"
+    database: "ingenia_tech",
+    port: 3306,
+    connectionLimit: 10,
+    queuelimit: 0
+    
 });
+
+module.exports=pool;
 
 // CORREGIDO: eliminado pool.connect() - el pool se conecta automáticamente
 
