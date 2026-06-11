@@ -82,3 +82,39 @@ footer {
     padding: 20px;
     background-color: #111827;
 }
+
+/* =========================
+   DISEÑO RESPONSIVO CELULAR
+   ========================= */
+@media screen and (max-width: 768px){
+
+    body{
+        padding:20px;
+    }
+
+    .container{
+        width:100%;
+        height:auto;
+        min-height:600px;
+    }
+
+    .form-container{
+        width:100%;
+    }
+
+    .overlay-container{
+        display:none;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    input{
+        font-size:16px;
+    }
+
+    button{
+        font-size:16px;
+    }
+}

@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login & Registro</title>
 <link rel="stylesheet" href="login.css">
-<link rel="stylesheet" href="script de la pagina.js">
 </head>
 <body>
 
 <div class="container" id="container">
 
-    <!-- PARTE DEL LOGIN  DE INGENIA TECH -->
+    <!-- SECCION LOGIN -->
     <div class="form-container login-container">
         <form>
             <h2>Login</h2>
@@ -25,50 +24,44 @@
 
             <button type="button" onclick="iniciarSesion()">Login</button>
 
-            <p>
-                ¿No tienes cuenta?
+            <p>¿No tienes cuenta?
                 <a href="#" onclick="mostrarRegistro()">Registrarse</a>
             </p>
         </form>
     </div>
 
-    <!-- PARTE DEL REGISTRO DE INGENIA TECH -->
+    <!-- SECCION REGISTRO -->
     <div class="form-container register-container">
         <form>
             <h2>Sign Up</h2>
 
-            <input type="text" placeholder="Usuario" required>
-
-            <input type="email" placeholder="Correo" required>
+            <input type="text" id="nombre" placeholder="Usuario" required>
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
 
             <div class="password-box">
                 <input type="password" id="registerPass" placeholder="Contraseña" required>
                 <span onclick="togglePassword('registerPass')">😒</span>
             </div>
 
-            <button type="button">Registrar</button>
+            <button type="button" onclick="registrarUsuario()">Registrar</button>
 
-            <p>
-                ¿Ya tienes cuenta?
+            <p>¿Ya tienes cuenta?
                 <a href="#" onclick="mostrarLogin()">Login</a>
             </p>
         </form>
     </div>
 
-    <!-- PANEL AZUL PARA EL LOGIN DONDE SE MUESTRA EL LOGIN Y EL REGISTRO -->
+    <!-- PANEL DECORATIVO -->
     <div class="overlay-container">
         <div class="overlay">
-
             <div class="overlay-panel overlay-left">
                 <h1>WELCOME!</h1>
             </div>
 
             <div class="overlay-panel overlay-right">
-                <h1>SEAIS BIENVENIDO A
-                    INGENIA TECH!</h1>
-                <p>Disfruta tu estancia, si no muerete jsjs</p>
+                <h1>SEAIS BIENVENIDO A INGENIA TECH</h1>
+                <p>Disfruta tu estancia</p>
             </div>
-
         </div>
     </div>
 
