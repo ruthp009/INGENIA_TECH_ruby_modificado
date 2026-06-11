@@ -2,39 +2,35 @@ const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const path = require("path");
-const http = require("http");  // CORREGIDO: importar http
-const fs = require("fs");      // CORREGIDO: importar fs
-const PORT = 3000;             // CORREGIDO: definir PORT
+const http = require("http");
+const fs = require("fs");
+const PORT = 3000;
 
 const app = express();
  
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json()); // permite recibir JSON desde el frontend
+ 
 app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "ingresar a ingenia tech.html"));
 });
  
 // ── CONEXIÓN A MYSQL  ──────────────────────────────────────────
-const pool = mysql.createPool({  // CORREGIDO: usar createPool вместо createConnection
+const pool = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "Rubi#Data_01",
     database: "ingenia_tech"
 });
 
-pool.connect((error) => {
-    if (error) {
-        console.log("Error de conexión");
-    } else {
-        console.log("Conectado a MySQL");
-    }
-});
- 
+// CORREGIDO: eliminado pool.connect() - el pool se conecta automáticamente
+
 const servidor = http.createServer(async (req, res) => {
 
     // PAGINA LOGIN
     if (req.url === '/' || req.url === '/login') {
+
         const filePath = path.join(
             __dirname,
             'logins.html',
@@ -50,6 +46,7 @@ const servidor = http.createServer(async (req, res) => {
 
     // CARGAR CSS DEL LOGIN
     if (req.url === '/login.css') {
+
         const filePath = path.join(
             __dirname,
             'logins.html',
@@ -65,6 +62,7 @@ const servidor = http.createServer(async (req, res) => {
 
     // CARGAR JS DEL LOGIN
     if (req.url === '/script.js') {
+
         const filePath = path.join(
             __dirname,
             'logins.html',
@@ -80,6 +78,7 @@ const servidor = http.createServer(async (req, res) => {
 
     // REGISTRAR USUARIO
     if (req.url === '/registrar' && req.method === 'POST') {
+
         let body = '';
 
         req.on('data', chunk => {
@@ -87,7 +86,9 @@ const servidor = http.createServer(async (req, res) => {
         });
 
         req.on('end', async () => {
+
             try {
+
                 const datos = JSON.parse(body);
 
                 await pool.query(
@@ -104,6 +105,7 @@ const servidor = http.createServer(async (req, res) => {
                 }));
 
             } catch (error) {
+
                 console.error(error);
 
                 res.writeHead(500, {
@@ -121,7 +123,9 @@ const servidor = http.createServer(async (req, res) => {
 
     // LISTAR USUARIOS
     if (req.url === '/usuarios' && req.method === 'GET') {
+
         try {
+
             const [usuarios] = await pool.query(
                 'SELECT * FROM usuarios'
             );
@@ -133,6 +137,7 @@ const servidor = http.createServer(async (req, res) => {
             return res.end(JSON.stringify(usuarios));
 
         } catch (error) {
+
             console.error(error);
 
             res.writeHead(500, {
@@ -151,6 +156,7 @@ const servidor = http.createServer(async (req, res) => {
     });
 
     res.end('Ruta no encontrada');
+
 });
 
 servidor.listen(PORT, () => {
